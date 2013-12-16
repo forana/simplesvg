@@ -26,8 +26,22 @@ class SVG:
 		xml.write(writer = io)
 		return io.getvalue()
 
-	def circle(self, x, y, r, fill = None, strokeWidth = 0, stroke = None, **kwargs):
-		shape = Circle(x, y, r, fill, strokeWidth, stroke, **kwargs)
+	def circle(self, x, y, r, **kwargs):
+		shape = Circle(x, y, r, **kwargs)
 		self.children.append(shape)
 		return shape
 
+	def rectangle(self, x, y, width, height, **kwargs):
+		shape = Rectangle(x, y, width, height, **kwargs)
+		self.children.append(shape)
+		return shape
+
+	def line(self, x1, y1, x2, y2, **kwargs):
+		shape = Line(x1, y1, x2, y2, **kwargs)
+		self.children.append(shape)
+		return shape
+
+	def polygon(self, points, **kwargs):
+		shape = Polygon(points, **kwargs)
+		self.children.append(shape)
+		return shape
