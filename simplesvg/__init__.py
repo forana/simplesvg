@@ -9,10 +9,10 @@ def rgb(r, g, b):
 	return "rgb(%d,%d,%d)" % (r,g,b)
 
 class SVG:
-	def __init__(self, width, height, children = [],):
+	def __init__(self, width, height):
 		self.width = width
 		self.height = height
-		self.children = children
+		self.children = []
 
 	def __str__(self):
 		return self.to_xml()
